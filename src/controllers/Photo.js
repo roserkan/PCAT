@@ -18,7 +18,6 @@ const add = async (req, res, next) => {
         await new Photo(data).save();
         res.redirect('/');
     } catch (err) {
-        console.log('controllers=>base=>about');
         next(err);
     }
 };
@@ -28,7 +27,6 @@ const update = async (req, res, next) => {
         await Photo.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.redirect('/');
     } catch (err) {
-        console.log('controllers=>base=>about');
         next(err);
     }
 };
@@ -42,7 +40,6 @@ const remove = async (req, res, next) => {
         });
         res.redirect('/');
     } catch (err) {
-        console.log('controllers=>base=>about');
         next(err);
     }
 };
